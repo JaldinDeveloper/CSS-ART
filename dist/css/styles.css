@@ -1,1 +1,1 @@
-body{background-color:#15144e}h1{color:#dfdfdf}
+body{background-color:#15144e}.cableway{background:#32ff7e;width:250px;height:250px;border-radius:10%;position:absolute;top:100px;left:-250px;z-index:1;animation:cableWayAnimation;animation-duration:20s;animation-iteration-count:infinite}@keyframes cableWayAnimation{0%{top:100px;left:0}100%{left:100%;top:450px}}
