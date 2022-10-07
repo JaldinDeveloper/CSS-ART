@@ -1,0 +1,29 @@
+{
+  "name": "cssart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaldinDeveloper/CSS-ART.git"
+  },
+  "author": "Carlos y Andres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaldinDeveloper/CSS-ART/issues"
+  },
+  "homepage": "https://github.com/JaldinDeveloper/CSS-ART#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-useref": "^5.0.0",
+    "sass": "^1.55.0"
+  }
+}
