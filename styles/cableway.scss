@@ -1,28 +1,103 @@
+$background-Color: rgb(21, 20, 78);
+$Cableway-Color: #32ff7e; 
+$Cableway-XY-Dimension: 15rem;
 body{
-    background-color: rgb(21, 20, 78);
+    background-color: $background-Color;
 }
 
 .cableway{
-   background: #32ff7e; 
-   width: 250px;
-   height: 250px;
+   background: $Cableway-Color; 
+   width: $Cableway-XY-Dimension;
+   height: $Cableway-XY-Dimension;
    border-radius: 10%;
+   border-style: solid;
+   border-color: #149257;
+   border-right: #149257;
+   border-top: #149257;
+   border-width: 30px;
    position: absolute;
    top: 100px;
-   left: -250px;
+   left: - $Cableway-XY-Dimension;
    z-index: 1;
    animation: cableWayAnimation;
-   animation-duration: 20s;
+   animation-duration: 7s;
    animation-iteration-count: infinite;
    //animation-direction: reverse;
 }
 
+.connectline{
+    position: absolute;
+    border-style: solid;
+    border-color: gray;
+    border-style: dotted;
+    border-width: 15%;
+    background-color: black;   
+    height: 80px;
+    width: 10px;
+    left: 50%;
+    bottom: 100%;
+    z-index: 2;
+}
+
+.cableway:hover{
+    animation-play-state: paused;
+}
+
+.connectaxis{
+    position: absolute;
+    background-color: black;
+    height: 21px;
+    width: 25px;
+    border-color: gray;
+    border-style: solid;
+    border-width: 35%;
+    border-radius: 50%;
+    z-index: 3;
+    left: 50%;
+    bottom: 130%;
+}
+
+.window{
+    background: rgb(135, 236, 236); 
+    width: $Cableway-XY-Dimension * 0.7;
+    height: $Cableway-XY-Dimension * 0.7;
+    border-radius: 10%;
+    border-width: 30px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    z-index: 3;
+}
+
+.line{
+    top: $Cableway-XY-Dimension * 0.65;
+    left: 0px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    border-color: gray;
+    border-style: dotted;
+    border-width: 4%;
+    transform: rotate(9.0deg);
+}
+
 @keyframes cableWayAnimation {
     0% {
-        top: 100px;
-        left: 0px;
+        top: $Cableway-XY-Dimension * 0.5;
+        right: $Cableway-XY-Dimension *5;
     }
     100% {
-        left: 100%; top: 450px;
+        top: $Cableway-XY-Dimension*1.5;
+        left: 100%; 
     }
 }
+
+// y = 125px , x = -250px
+// y = 375px, x = 1000px
+
+// 375 - 125 / 1250px
+// y = w / - 
