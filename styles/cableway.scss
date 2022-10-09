@@ -23,6 +23,7 @@ body{
     width: $Layer-2-X-Dimension;
     position: absolute;
     top: 20%;
+   // background-color: blue;
 }
 
 .cableway{
@@ -114,13 +115,13 @@ body{
 }
 
 .line{
-    top: 30%;
-    left: -5%;
+    top: 27%;
+    left: 0%;
     padding: 0%;
     margin: 0%;
     position: absolute;
     z-index: 1;
-    width: 150%;
+    width: 100%;
     height: 1%;
     background-color: $Cable-color;
     border-color: $Iron-color;
@@ -135,7 +136,7 @@ body{
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(359deg);
+        transform: rotate(360deg);
     }
 }
 
