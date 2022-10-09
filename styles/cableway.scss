@@ -33,7 +33,7 @@ body{
     border-width: 15%;
     background-color: black;   
     height: 80px;
-    width: 10px;
+    width: 3px;
     left: 50%;
     bottom: 100%;
     z-index: 2;
@@ -57,6 +57,15 @@ body{
     bottom: 130%;
 }
 
+.axis{
+    position: absolute;
+    height: 10%;
+    width: 60%;
+    background-color: gray;
+    left: 50%;
+    bottom: 50%;
+    z-index: 4;
+}
 .window{
     background: rgb(135, 236, 236); 
     width: $Cableway-XY-Dimension * 0.7;
@@ -77,20 +86,25 @@ body{
     position: absolute;
     z-index: 1;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: black;
     border-color: gray;
     border-style: dotted;
     border-width: 4%;
     transform: rotate(9.0deg);
+    
 }
 
+// @keyframes rotateAxis{
+//     rotate:;
+// }
+
 @keyframes cableWayAnimation {
-    0% {
+    from{
         top: $Cableway-XY-Dimension * 0.5;
         right: $Cableway-XY-Dimension *5;
     }
-    100% {
+    to{
         top: $Cableway-XY-Dimension*1.5;
         left: 100%; 
     }
