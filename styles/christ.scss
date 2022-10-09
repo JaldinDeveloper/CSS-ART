@@ -1,0 +1,346 @@
+/*Canvas palette*/
+$background: white;
+/*Sky base palette*/
+$sky: #c8fff1;
+/*Statue base palette*/
+$shadow-base: #363434;
+$base-middle: #444;
+$base-bottom:#444;
+$base-top: #666;
+/*Mountain palette*/
+$green2: #badc58;
+/*Statue palette*/
+$s-base-color: antiquewhite;
+$arms-shadow: #e7d8d8;
+$eyes-nose-mouth: #c9bbbb;
+$nose-border: #e8dbc9;
+$face-shadow: #d5c6c6;
+$hair-back: #f3e5d2;
+$hair-front: #e8dbc9;
+$tunic-front: #e3d6c4;
+$tunic-front-shadow: #bbb4b4;
+$tunic-back1: #e3d6c4;
+$tunic-back2: #d2c5b5;
+$tunic-back-shadow: #111111;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.canvas{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $background;
+  width: 100%;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vmin;
+  height: 85vmin;
+  background: $sky;
+
+
+  .mountain {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mountain:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20%; /*Aca para mover el cerro*/
+    width: 100%;
+    height: 100%;
+    background-color: $green2;
+    transform-origin: 0 100%;
+    border-radius: 20% 0 0 0;
+    transform: rotate(45deg);
+  }
+
+  .christ {
+    position: absolute;
+    bottom: 79%;
+    right: 26%; /*Aca para mover la statue*/
+
+    .base {
+      position: absolute;
+
+      &__middle {
+        width: 10vmin;
+        height: 1vmin;
+        background-color: $base-middle;
+        position: absolute;
+        top: 16.7vmin;
+      }
+
+      &__top {
+        width: 10vmin;
+        height: 5vmin;
+        background-color: $base-top;
+        -moz-border-radius: 10vmin / 5vmin;
+        -webkit-border-radius: 10vmin / 5vmin;
+        border-radius: 10vmin / 5vmin;
+        position: absolute;
+        top: 14vmin;
+      }
+
+      &__bottom {
+        width: 10vmin;
+        height: 5vmin;
+        background-color: $base-bottom;
+        -moz-border-radius: 10vmin / 5vmin;
+        -webkit-border-radius: 10vmin / 5vmin;
+        border-radius: 10vmin / 5vmin;
+        position: absolute;
+        top: 15vmin;
+        box-shadow: 0 0 1vmin $shadow-base
+      }
+    }
+
+    .body {
+      position: relative;
+
+      &__legs {
+        position: absolute;
+        left: 2vmin;
+        bottom: -18vmin;
+        width: 6vmin;
+        height: 20vmin;
+        border-radius: 10vmin / 5vmin;
+        background-color: $s-base-color;
+      }
+
+      &__arms {
+        position: absolute;
+        left: 3vmin;
+        bottom: -10vmin;
+        width: 4vmin;
+        height: 20vmin;
+        border-radius: 20vmin / 5vmin;
+        background-color: $s-base-color;
+        transform: rotate(90deg);
+        box-shadow: 0 0 1vmin $arms-shadow;
+      }
+
+      &__hands {
+        position: absolute;
+        left: 13vmin;
+        border-bottom: 7vmin solid $s-base-color;
+        border-left: 1vmin solid transparent;
+        border-right: 1vmin solid transparent;
+        width: 3vmin;
+        bottom: -2.6vmin;
+        border-radius: 3vmin;
+        transform: rotate(275deg) rotateY(50deg);
+      }
+
+      &__hands::before {
+        position: absolute;
+        content: "";
+        left: -5vmin;
+        border-bottom: 7vmin solid $s-base-color;
+        border-left: 1vmin solid transparent;
+        border-right: 1vmin solid transparent;
+        width: 3vmin;
+        bottom: 12.4vmin;
+        border-radius: 3vmin;
+        transform: rotate(165deg) rotateY(50deg);
+      }
+
+      &__thumbs {
+        position: absolute;
+        left: 14vmin;
+        border-bottom: 3vmin solid $s-base-color;
+        border-left: 1vmin solid transparent;
+        border-right: 1vmin solid transparent;
+        width: 2vmin;
+        bottom: -0.2vmin;
+        border-radius: 3vmin;
+        transform: rotate(60deg);
+      }
+
+      &__thumbs::before {
+        position: absolute;
+        content: "";
+        left: -11.3vmin;
+        border-bottom: 3vmin solid $s-base-color;
+        border-left: 1vmin solid transparent;
+        border-right: 1vmin solid transparent;
+        width: 0.37vmin;
+        bottom: -21vmin;
+        border-radius: 3vmin;
+        transform: rotate(180deg) rotateZ(65deg);
+      }
+
+      &__eyes {
+        position: absolute;
+        width: 0.6vmin;
+        height: 0.38vmin;
+        background: #c9bbbb;
+        border-radius: 40%;
+        bottom: 6.2vmin;
+        right: -4.38vmin;
+        box-shadow: 1.5vmin 0 $eyes-nose-mouth;
+        z-index: 4;
+      }
+
+      &__nose {
+        position: absolute;
+        left: 4vmin;
+        border-bottom: 0.5vmin solid $nose-border;
+        border-top: 1vmin solid transparent;
+        border-left: 1vmin solid transparent;
+        border-right: 0.3vmin solid $nose-border;
+        width: 1vmin;
+        bottom: 4.5vmin;
+        padding-bottom: 1vmin;
+        border-radius: 0.9vmin;
+        z-index: 6;
+      }
+
+      &__mouth {
+        position: absolute;
+        width: 1vmin;
+        height: 0.5vmin;
+        top: -4.3vmin;
+        left: 4.3vmin;
+        border-radius: 50%;
+        background: transparent;
+        border-top: 0.1vmin solid $eyes-nose-mouth;
+        rotate: 180deg;
+        z-index: 4;
+      }
+
+      &__face {
+        position: absolute;
+        left: 2.84vmin;
+        bottom: 3vmin;
+        width: 4vmin;
+        height: 5vmin;
+        background: $s-base-color;
+        box-shadow: 0 0 1vmin $face-shadow;
+        border-radius: 120% / 160% 160% 120% 120%;
+        transform: rotate(180deg);
+        z-index: 3;
+      }
+
+      &__neck {
+        position: absolute;
+        left: 2.8vmin;
+        border-bottom: 7vmin solid $s-base-color;
+        border-left: 2vmin solid transparent;
+        border-right: 2vmin solid transparent;
+        width: 3vmin;
+        bottom: 0;
+        border-radius: 3vmin;
+        z-index: 1;
+      }
+
+      &__hair {
+        position: absolute;
+        left: 2.3vmin;
+        bottom: -0.5vmin;
+        width: 5vmin;
+        height: 9vmin;
+        background: $hair-back;
+        border-radius: 100% / 30% 30% 50% 50%;
+        transform: rotate(180deg);
+        z-index: 0;
+      }
+
+      &__hair-back {
+        position: absolute;
+        left: 1.37vmin;
+        border-bottom: 7vmin solid $hair-back;
+        border-left: 1vmin solid transparent;
+        border-right: 1vmin solid transparent;
+        width: 7vmin;
+        bottom: 0.5vmin;
+        border-radius: 3vmin;
+        z-index: 0;
+      }
+
+      &__hair-front {
+        position: absolute;
+        left: 2.4vmin;
+        border-bottom: 2vmin solid transparent;
+        border-top: 1vmin solid $hair-front;
+        border-left: 1vmin solid $hair-front;
+        border-right: 1vmin solid $hair-front;
+        width: 5vmin;
+        bottom: 3.1vmin;
+        padding-top: 2.8vmin;
+        border-radius: 2vmin;
+        z-index: 6;
+      }
+
+      &__tunic-front {
+        position: absolute;
+        left: -0.8vmin;
+        bottom: -7.6vmin;
+        width: 2.5vmin;
+        height: 10vmin;
+        border-radius: 10vmin / 5vmin;
+        background-color: $s-base-color;
+        z-index: 8;
+      }
+
+      &__tunic-front:after {
+        position: absolute;
+        content: "";
+        left: 1vmin;
+        bottom: -1vmin;
+        width: 2vmin;
+        height: 11vmin;
+        border-radius: 10vmin / 5vmin;
+        background-color: $tunic-front;
+        box-shadow: 0 0 1vmin $tunic-front-shadow;
+      }
+
+      &__tunic-front:before {
+        content: "";
+        position: absolute;
+        left: 2vmin;
+        bottom: -4vmin;
+        width: 2vmin;
+        height: 14vmin;
+        border-radius: 10vmin / 5vmin;
+        background-color: $tunic-front;
+      }
+
+      &__tunic-back {
+        position: absolute;
+        left: 7.5vmin;
+        bottom: -8vmin;
+        width: 2.5vmin;
+        height: 10vmin;
+        border-radius: 10vmin / 5vmin;
+        background-color: $tunic-back1;
+      }
+
+      &__tunic-back:before {
+        position: absolute;
+        content: "";
+        left: -0.8vmin;
+        bottom: -3vmin;
+        width: 2.5vmin;
+        height: 10vmin;
+        border-radius: 10vmin / 5vmin;
+        background-color: $tunic-back2;
+        box-shadow: 0 0 0.8vmin $tunic-front-shadow;
+      }
+    }
+  }
+}
