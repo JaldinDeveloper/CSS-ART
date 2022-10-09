@@ -1,0 +1,151 @@
+$background-Color: white;
+$Cableway-Color: #32ff7e;
+$Cableway-border-Color: #149257;
+
+$Window-Color:rgb(167, 241, 235);
+$Cableway-X-Dimension: 10%;
+$Cableway-Y-Dimension: 25%;
+$Iron-color: gray;
+$Cable-color: black;
+$Layer-2-X-Dimension: 100%;
+$Layer-2-Y-Dimension: 70%;
+$Animation-duration: 7s;
+$Cableway-border-radius: 20% 20% 90% 90%;
+body{
+    background-color: $background-Color;
+}
+
+
+.layer-2{
+    padding: 0%;
+    margin-left: 0%;
+    height: $Layer-2-Y-Dimension;
+    width: $Layer-2-X-Dimension;
+    position: absolute;
+    top: 20%;
+}
+
+.cableway{
+   background: $Cableway-Color; 
+   width: $Cableway-X-Dimension;
+   height: $Cableway-Y-Dimension;
+   border-radius: $Cableway-border-radius;
+   
+   border-style: solid;
+   border-color: $Cableway-border-Color;
+   border-width: 0px 0px 25px 15px;
+   position: absolute;
+   left: - $Cableway-X-Dimension;
+   z-index: 1;
+   animation: cableWayAnimation;
+   animation-duration: $Animation-duration;
+   animation-iteration-count: infinite;
+   &__window{
+    background: $Window-Color; 
+    width: 70%;
+    height: 70%;
+    border-radius: $Cableway-border-radius;
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    z-index: 3;
+    }
+    &__door{
+        background-color: $Cable-color;
+        width:2%;
+        height: 100%;
+        left: 50%;
+        position: absolute;
+    }
+    &__handle{
+        background-color: $Cable-color;
+        width: 15%;
+        height: 5%;
+        border-radius: 30%;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+    }
+    &:hover{
+        animation-play-state: paused;
+    }
+
+}
+
+.connectline{
+    position: absolute;
+    border-style: solid;
+    border-color: $Iron-color;
+    border-style: dotted;
+    border-width: 15%;
+    background-color: $Cable-color;   
+    height: 35%;
+    width: 2%;
+    left: 50%;
+    bottom: 100%;
+    z-index: 2;
+}
+
+.connectaxis{
+    position: absolute;
+    background-color: $Cable-color;
+    height: 12%;
+    width: 12%;
+    border-color: $Iron-color;
+    border-style: solid;
+    border-width: 35%;
+    border-radius: 50%;
+    z-index: 3;
+    left: 47.5%;
+    bottom: 130%;
+    &__axis{
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        background-color: $Iron-color;
+        left: 0%;
+        bottom: 50%;
+        z-index: 4;
+        border-radius: 80%;
+        animation: rotateAxis;
+        animation-duration: $Animation-duration;
+        animation-iteration-count: infinite;
+    }
+}
+
+.line{
+    top: 30%;
+    left: -5%;
+    padding: 0%;
+    margin: 0%;
+    position: absolute;
+    z-index: 1;
+    width: 150%;
+    height: 1%;
+    background-color: $Cable-color;
+    border-color: $Iron-color;
+    border-style: dotted;
+    border-width: 4%;
+    transform: rotate(3.6deg);
+}
+
+
+@keyframes rotateAxis {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes cableWayAnimation {
+    from{
+        top: 25%;
+        right: 75%;
+    }
+    to{
+        top: 45%;
+        left: 100%; 
+    }
+}

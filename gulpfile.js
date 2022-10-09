@@ -22,7 +22,7 @@ gulp.task('reload', function(cb){
     cb();
 });
 
-gulp.task('serve-deamon', function(){
+gulp.task('default', function(){
     browserSync.init({
         server: {
             baseDir: './'
