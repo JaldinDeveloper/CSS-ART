@@ -33,10 +33,23 @@ $tunic-back-shadow: #111111;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   background: $background;
   width: 100%;
   height: 100vh;
+}
+
+.day{
+  background-color: rgb(206, 192, 65);
+  height: 100%;
+  width: 10%;
+  z-index: 7;
+}
+
+.night{
+  background-color: rgb(54, 54, 235);
+  width: 10%;
+  z-index: 7;
 }
 
 .box {
@@ -44,8 +57,8 @@ $tunic-back-shadow: #111111;
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 100vmin;
-  height: 85vmin;
+  width: 80%;
+  height: 100vmin;
   background: $sky;
 
 
@@ -71,8 +84,8 @@ $tunic-back-shadow: #111111;
 
   .christ {
     position: absolute;
-    bottom: 79%;
-    right: 26%; /*Aca para mover la statue*/
+    bottom: 75%;
+    right: 33%; /*Aca para mover la statue*/
 
     .base {
       position: absolute;

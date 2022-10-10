@@ -11,10 +11,6 @@ $Layer-2-X-Dimension: 100%;
 $Layer-2-Y-Dimension: 70%;
 $Animation-duration: 7s;
 $Cableway-border-radius: 20% 20% 90% 90%;
-body{
-    background-color: $background-Color;
-}
-
 
 .layer-2{
     padding: 0%;
@@ -69,6 +65,7 @@ body{
     }
     &:hover{
         animation-play-state: paused;
+        $Cableway-Color: #ff3232;
     }
 
 }
@@ -127,7 +124,7 @@ body{
     border-color: $Iron-color;
     border-style: dotted;
     border-width: 4%;
-    transform: rotate(3.6deg);
+    transform: rotate(4.9deg);
 }
 
 
