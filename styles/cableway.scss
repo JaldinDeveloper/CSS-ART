@@ -3,18 +3,14 @@ $Cableway-Color: #32ff7e;
 $Cableway-border-Color: #149257;
 
 $Window-Color:rgb(167, 241, 235);
-$Cableway-X-Dimension: 10%;
-$Cableway-Y-Dimension: 25%;
+$Cableway-X-Dimension: 17.5%;
+$Cableway-Y-Dimension: 30%;
 $Iron-color: gray;
 $Cable-color: black;
 $Layer-2-X-Dimension: 100%;
 $Layer-2-Y-Dimension: 70%;
-$Animation-duration: 7s;
+$Animation-duration: 8s;
 $Cableway-border-radius: 20% 20% 90% 90%;
-body{
-    background-color: $background-Color;
-}
-
 
 .layer-2{
     padding: 0%;

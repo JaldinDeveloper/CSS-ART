@@ -60,7 +60,8 @@
   --rLightG-start: #0000;
   --rLightG-half: #000;
   --rLightG-end: #0000;
-
+  --bush-shadow: #6ab04c;
+  --bush-color: #accf41;
   /*display reflector*/
   --display-reflector: none;
 }
@@ -89,7 +90,10 @@
   --base-bottom: var(--base-bottom-dark);
   --base-top: var(--base-top-dark);
   --display-reflector: visible;
+  --bush-shadow: #3e6428;
+  --bush-color: #52680f;
 }
+
 .box {
   position: relative;
   width: 100vmin;
@@ -126,6 +130,85 @@
     background: repeating-linear-gradient(transparent, var(--stair-color-bg) 10vmin),
     repeating-linear-gradient(0.25turn, transparent, var(--stair-color-step) 1vmin);
     z-index: 1;
+  }
+
+  @mixin bush-container($bottom,$right){
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+    width: 8%;
+    height: 6%;
+    z-index: 1;
+  }
+
+  .bush-1{
+    @include bush-container(45%,27%);
+  }
+
+  .bush-2{
+    @include bush-container(30%,40%);
+  }
+
+  .bush-3{
+    @include bush-container(25%,30%);
+  }
+
+  .bush-4{
+    @include bush-container(10%,30%);
+  }
+
+  .bush-5{
+    @include bush-container(5%,5%);
+  }
+
+  .bush-6{
+    @include bush-container(5%,55%);
+  }
+
+  .bush-7{
+    @include bush-container(35%,2%);
+  }
+
+  .leaf1{
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    width: 54%;
+    height: 60%;
+    border-style: solid;
+    border-radius: 40%;
+    border-color: var(--bush-shadow);
+    border-width: 0px 0px 2px 5px;
+    background-color: var(--bush-color);
+    z-index: 2;
+  }
+
+  .leaf2{
+    position: absolute;
+    bottom: 45%;
+    left: 30%;
+    width: 54%;
+    height: 60%;
+    border-style: solid;
+    border-radius: 40%;
+    border-color: var(--bush-shadow);
+    border-width: 0px 0px 2px 5px;
+    background-color: var(--bush-color);
+    z-index: 2;
+  }
+
+  .leaf3{
+    position: absolute;
+    bottom: 0%;
+    left: 45%;
+    width: 54%;
+    height: 60%;
+    border-style: solid;
+    border-radius: 40%;
+    border-color: var(--bush-shadow);
+    border-width: 0px 0px 2px 5px;
+    background-color: var(--bush-color);
+    z-index: 2;
   }
 
   .stairs1{
@@ -251,7 +334,7 @@
   @mixin reflector{
     display: var(--display-reflector);
     position: absolute;
-    z-index: 2;
+    z-index: 1;
   }
   @mixin device{
     position: absolute;
