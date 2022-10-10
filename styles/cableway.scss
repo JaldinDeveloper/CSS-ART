@@ -23,6 +23,7 @@ body{
     width: $Layer-2-X-Dimension;
     position: absolute;
     top: 20%;
+    overflow: hidden;
 }
 
 .cableway{
@@ -114,7 +115,7 @@ body{
 }
 
 .line{
-    top: 30%;
+    top: 31%;
     left: -5%;
     padding: 0%;
     margin: 0%;
@@ -126,7 +127,7 @@ body{
     border-color: $Iron-color;
     border-style: dotted;
     border-width: 4%;
-    transform: rotate(3.6deg);
+    transform: rotate(6.1deg);
 }
 
 
