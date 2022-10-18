@@ -11,6 +11,16 @@ $Layer-2-X-Dimension: 100%;
 $Layer-2-Y-Dimension: 70%;
 $Animation-duration: 8s;
 $Cableway-border-radius: 20% 20% 90% 90%;
+:root {
+    --Cloud-visible: hidden;
+    --bg-color-l: #dcdcdc; /*Default BG (Light)*/
+    --tx-color-l: #0e0e0e; /*Default TX (Light)*/
+    --bg-colorT-l: #424242; /*Default tooltip BG (Light)*/
+    --tx-colorT-l: #eeeeee; /*Default tooltip TX (Light)*/
+    --shadow-d: 0 0 10px 0 rgba(211, 211, 211, 0.5); /*BoxShadow Dark*/
+}
+
+
 
 .layer-2{
     padding: 0%;
@@ -65,8 +75,95 @@ $Cableway-border-radius: 20% 20% 90% 90%;
     }
     &:hover{
         animation-play-state: paused;
+        --Cloud-visible: visible;
+        --tooltip-pos: var(--tooltip-pos-left);
+        --inset-t: -5px auto auto 110%;
+        --inset-a: 50% 100% auto auto;
+        --margin-a: -5px auto auto auto;
+        --margin-t: auto auto auto auto;
     }
 
+}
+
+.triangle{
+    visibility: var(--Cloud-visible);
+    position: absolute;
+    top: 40%;
+    left: 90%;
+    width: 20px;
+    height: 20px;
+    //background-color: whitesmoke;
+    
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right:20px solid whitesmoke; 
+    z-index: 2;
+}
+
+.message{
+    visibility: var(--Cloud-visible);
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    width: 150px;
+    height: 150px;
+    border-style: dotted;
+    border-width: 2px;
+    border-radius: 50%;
+    border-color: #0e0e0e;
+    background-color: whitesmoke;
+}
+
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+}
+.box-1 {
+    font-weight: var(--font-weight);
+    background-color: var(--bg-color);
+    color: var(--tx-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+    height: 20em;
+    
+}
+.tooltip {
+    position: relative;
+    
+}
+/*Config of the tooltip*/
+.tooltipText {
+    visibility: --Cloud-visible;
+    width: 120px;
+    background-color: var(--bg-colorT);
+    color: var(--tx-colorT);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    inset: var(--inset-t);
+    margin: var(--margin-t);
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+/*Adding the little arrow*/
+.tooltip .tooltipText::after {
+    content: "";
+    position: absolute;
+    inset: var(--inset-a);
+    margin: var(--margin-a);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--tooltip-pos);
 }
 
 .connectline{
